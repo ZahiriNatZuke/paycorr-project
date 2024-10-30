@@ -1,12 +1,17 @@
 <section class="docs-grid">
   @for (doc of docs(); track doc._id) {
-    <article class="doc-card">
+    <a class="doc-card" role="article" [href]="doc.web_url" target="_blank">
       <header class="doc-card-header">
         <h3 class="doc-card-title">{{ doc.headline.main }}</h3>
+        <img class="doc-card-cover-image" [src]="doc.multimedia | safeImage" alt="">
       </header>
       <div class="doc-card-content">
         <p class="doc-card-description">{{ doc.abstract }}</p>
+        <div class="flex justify-between items-center mt-auto">
+          <a [href]="doc.web_url" target="_blank" class="read-more-link">Read more</a>
+          <span class="words-count">{{ doc.word_count }} words</span>
+        </div>
       </div>
-    </article>
+    </a>
   }
 </section>
