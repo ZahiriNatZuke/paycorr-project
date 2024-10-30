@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <a [routerLink]="['home']">
+    <img ngSrc="logo.jpg" class="brand-logo" alt="brand logo" [height]="48" [width]="48">
+  </a>
+  <ul class="today-info">
+    <li>
+      <h1>Today's Paper</h1>
+    </li>
+    <li>
+      @let date = Date() ;
+      <time [attr.datetime]="date | date: 'YYYY-MM-dd'">
+        {{ date | date:'fullDate' }}
+      </time>
+    </li>
+  </ul>
+  <button class="reload-data-button ms-10" type="button" (click)="refreshDocs()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw">
+      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+      <path d="M21 3v5h-5"/>
+      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+      <path d="M8 16H3v5"/>
+    </svg>
+  </button>
+</nav>
