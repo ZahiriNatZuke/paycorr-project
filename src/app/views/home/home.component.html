@@ -1,0 +1,12 @@
+<section class="docs-grid">
+  @for (doc of docs(); track doc._id) {
+    <article class="doc-card">
+      <header class="doc-card-header">
+        <h3 class="doc-card-title">{{ doc.headline.main }}</h3>
+      </header>
+      <div class="doc-card-content">
+        <p class="doc-card-description">{{ doc.abstract }}</p>
+      </div>
+    </article>
+  }
+</section>
