@@ -1,11 +1,13 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
+import { NotiflixService } from '@app/core/services';
 import { environment } from '@app/env';
-import { AppStore } from '@app/store';
-import { finalize } from 'rxjs';
+import { catchError, finalize, throwError } from 'rxjs';
+import { AppStore } from 'src/app/store';
 
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 	const { setIsFetching } = inject(AppStore);
+	const notiflix = inject(NotiflixService);
 
 	setIsFetching(true);
 
@@ -15,5 +17,25 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 		},
 	});
 
-	return next(newReq).pipe(finalize(() => setIsFetching(false)));
+	return next(newReq).pipe(
+		catchError(error => {
+			if (error.status === 401) {
+				notiflix.notify('Authentication error.', 'warning');
+			}
+
+			if (error.status === 404) {
+				notiflix.notify('Resource not found.', 'warning');
+			}
+
+			if ([500, 429].includes(error.status)) {
+				notiflix.notify(
+					'Lost connection with the service. Try again later.',
+					'failure'
+				);
+			}
+
+			return throwError(() => error);
+		}),
+		finalize(() => setIsFetching(false))
+	);
 };
