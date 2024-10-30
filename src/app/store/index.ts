@@ -2,7 +2,7 @@ import { Injector, inject, runInInjectionContext } from '@angular/core';
 import { Doc, QueryParams, RootApiResponse } from '@app/core/interfaces';
 import { ApiService, NotiflixService } from '@app/core/services';
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
-import { addEntities, addEntity, withEntities } from '@ngrx/signals/entities';
+import { addEntities, setEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { tap } from 'rxjs';
 
@@ -42,8 +42,11 @@ export const AppStore = signalStore(
 					rxMethod<RootApiResponse>(() =>
 						api.fetchDocs(params).pipe(
 							tap(({ response }: RootApiResponse) => {
-								response.docs.map(doc =>
-									patchState(store, addEntity({ ...doc, id: doc._id }))
+								patchState(
+									store,
+									setEntities(
+										response.docs.map(doc => ({ ...doc, id: doc._id }))
+									)
 								);
 								notiflix.closeLoading();
 							})
