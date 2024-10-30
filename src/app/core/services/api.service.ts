@@ -17,7 +17,7 @@ export class ApiService {
 					begin_date: formatDate(begin_date, 'YYYYMMdd', 'en'),
 					end_date: formatDate(end_date, 'YYYYMMdd', 'en'),
 					page,
-					fl: 'headline,abstract,multimedia,web_url,word_count',
+					fl: 'headline,abstract,multimedia,web_url,word_count,_id',
 				},
 			})
 			.pipe(filterSuccess());
