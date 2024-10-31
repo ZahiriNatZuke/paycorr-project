@@ -1,11 +1,16 @@
 {
+	"id": "paycorr-project-pwa",
 	"name": "paycorr-project",
 	"short_name": "paycorr-project",
+	"description": "technical challenge of PayCorr",
 	"theme_color": "#000000",
 	"background_color": "#ffffff",
 	"display": "standalone",
 	"scope": "./",
 	"start_url": "./",
+	"orientation": "portrait-primary",
+	"lang": "en-US",
+	"dir": "ltr",
 	"icons": [
 		{
 			"src": "icons/icon-72x72.png",
@@ -55,5 +60,14 @@
 			"type": "image/png",
 			"purpose": "maskable any"
 		}
-	]
+	],
+	"shortcuts": [
+		{
+			"name": "Home",
+			"url": "/home"
+		}
+	],
+	"launch_handler": {
+		"client_mode": ["navigate-existing", "auto"]
+	}
 }
