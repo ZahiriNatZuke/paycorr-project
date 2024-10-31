@@ -1,17 +1,11 @@
-import { Injector, inject, runInInjectionContext } from '@angular/core';
+import { inject, Injector, runInInjectionContext } from '@angular/core';
 import { Doc, QueryParams, RootApiResponse } from '@app/core/interfaces';
 import { ApiService, NotiflixService } from '@app/core/services';
 import { environment } from '@app/env';
-import {
-	patchState,
-	signalStore,
-	withHooks,
-	withMethods,
-	withState,
-} from '@ngrx/signals';
+import { patchState, signalStore, withHooks, withMethods, withState, } from '@ngrx/signals';
 import { setEntities, withEntities } from '@ngrx/signals/entities';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { Subject, fromEvent, takeUntil, tap } from 'rxjs';
+import { fromEvent, Subject, takeUntil, tap } from 'rxjs';
 
 export type AppState = {
 	isFetching: boolean;
@@ -21,7 +15,7 @@ export type AppState = {
 };
 
 const initialAppState: AppState = {
-	isFetching: false,
+	isFetching: true,
 	status: 'online',
 	query: {
 		page: 0,
