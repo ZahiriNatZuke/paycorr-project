@@ -12,7 +12,7 @@ export class SafeImagePipe implements PipeTransform {
 
 	transform(value: Multimedia[]) {
 		if (!value || !value.length) {
-			return '';
+			return 'https://fakeimg.pl/290x163?text=Not+Found';
 		}
 		const imageUrl =
 			value.find(media => media.subtype === 'master315')?.url ?? value[0].url;
