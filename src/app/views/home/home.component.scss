@@ -49,5 +49,17 @@
 
   }
 
+  .empty-state {
+    @apply flex items-center justify-center gap-4;
+    min-height: 50vh;
+
+    .empty-state-icon {
+      @apply text-stone-600;
+    }
+
+    .empty-state-message {
+      @apply text-3xl text-stone-600 font-semibold;
+    }
+  }
 
 }
