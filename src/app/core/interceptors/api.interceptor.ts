@@ -34,6 +34,7 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 				);
 			}
 
+			notiflix.closeLoading();
 			return throwError(() => error);
 		}),
 		finalize(() => setIsFetching(false))
