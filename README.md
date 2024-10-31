@@ -1,27 +1,42 @@
-# PaycorrProject
+# PayCorr Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## Technologies and Versions
 
-## Development server
+This project was developed using the following library versions:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Angular**: 12.2.0
+- **Node.js**: 22.10.0
+- **PNPM**: 9.12.13
+- **Angular CLI**: 18.2.10
 
-## Code scaffolding
+### Third-Party Libraries
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In addition to Angular, the following third-party libraries were used:
 
-## Build
+- **@ngrx/signals**: 18.1.1 - For state management using signals
+- **notiflix**: 3.2.7 - For custom alerts and notifications
+- **tailwindcss**: 3.4.14 - For styling the application
+- **tailwindcss**: 3.4.14 - For styling the application
+- **@biomejs/biome**: 1.9.4 - For linting & formating the code
+- **husky**: 9.1.6 - For pre-commit hooks
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation and Running
 
-## Running unit tests
+To set up the environment and run the project locally, follow these steps:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
 
-## Running end-to-end tests
+   ```bash
+   git clone https://github.com/ZahiriNatZuke/paycorr-project.git
+   cd paycorr-project
+   ```
+2. Install dependencies:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   pnpm install
+   ```
+3. Running the Project:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   ```bash
+   ng serve
+   ```
