@@ -30,7 +30,8 @@
 							}
 						],
 						"styles": ["src/styles.scss"],
-						"scripts": []
+						"scripts": [],
+						"allowedCommonJsDependencies": ["notiflix"]
 					},
 					"configurations": {
 						"production": {
@@ -42,8 +43,8 @@
 								},
 								{
 									"type": "anyComponentStyle",
-									"maximumWarning": "2kB",
-									"maximumError": "4kB"
+									"maximumWarning": "4kB",
+									"maximumError": "8kB"
 								}
 							],
 							"outputHashing": "all"

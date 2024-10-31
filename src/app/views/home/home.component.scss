@@ -50,8 +50,7 @@
   }
 
   .empty-state {
-    @apply flex items-center justify-center gap-4;
-    min-height: 50vh;
+    @apply flex items-center justify-center gap-4 min-h-[50dvh];
 
     .empty-state-icon {
       @apply text-stone-600;
