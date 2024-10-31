@@ -71,5 +71,5 @@
 		"client_mode": ["navigate-existing", "auto"]
 	},
 	"categories": ["news"],
-	"scope_extensions": ["https://paycorr-project.vercel.app"]
+	"scope_extensions": [{ "origin": "paycorr-project.vercel.app" }]
 }
