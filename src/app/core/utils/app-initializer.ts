@@ -1,6 +1,13 @@
+import { Signal } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+import { QueryParams } from '@app/core/interfaces';
 
-export function appInitializer(appStore: any, swUpdate: SwUpdate) {
+type AppStoreType = {
+	fetchDocs: (params: QueryParams) => void;
+	query: Signal<QueryParams>;
+};
+
+export function appInitializer(appStore: AppStoreType, swUpdate: SwUpdate) {
 	return () => {
 		if (swUpdate.isEnabled) {
 			swUpdate.checkForUpdate().then(result => {

@@ -69,5 +69,7 @@
 	],
 	"launch_handler": {
 		"client_mode": ["navigate-existing", "auto"]
-	}
+	},
+	"categories": ["news"],
+	"scope_extensions": ["https://paycorr-project.vercel.app"]
 }
