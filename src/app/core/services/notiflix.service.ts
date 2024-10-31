@@ -11,14 +11,14 @@ export class NotiflixService {
 		});
 	}
 
-	closeLoading(): void {
-		Notiflix.Loading.remove();
+	closeLoading(delay = 0): void {
+		Notiflix.Loading.remove(delay);
 	}
 
 	notify(
 		message: string,
 		type: 'success' | 'failure' | 'info' | 'warning'
 	): void {
-		Notiflix.Notify[type](message);
+		Notiflix.Notify[type](message, { timeout: 3000 });
 	}
 }
